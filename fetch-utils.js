@@ -7,6 +7,36 @@ export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
+export async function getParticipants() {
+    const response = await client
+        .from('workshops')
+        .select('*, participants, (*)')
+        .match({ 'participants.user_id}': client.auth.session().user.id });
+    
+    return checkError(response);
+}
+
+export async function deleteParticipant(id) {
+    const response = await client
+        .from('participants')
+        .delete()
+        .match({ id: id })
+        .single;
+
+    return checkError(response);
+}
+
+export async function createParticipant(participant) {
+    const response = await client
+        .from('participants')
+        .insert({
+            ...participant,
+            user_id: client.auth.session().user.id,
+        });
+
+    return checkError(response);
+}
+
 export function checkAuth() {
     const user = getUser();
 
@@ -37,6 +67,7 @@ export async function logout() {
     return (window.location.href = '../');
 }
 
-// function checkError({ data, error }) {
-//     return error ? console.error(error) : data;
-// }
+function checkError({ data, error }) {
+    return error ? console.error(error) : data;
+}
+
