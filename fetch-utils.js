@@ -7,10 +7,10 @@ export function getUser() {
     return client.auth.session() && client.auth.session().user;
 }
 
-export async function getParticipants() {
+export async function getWorkshops() {
     const response = await client
         .from('workshops')
-        .select('*, participants, (*)')
+        .select('*, participants (*)')
         .match({ 'participants.user_id}': client.auth.session().user.id });
     
     return checkError(response);
@@ -45,7 +45,7 @@ export function checkAuth() {
 
 export function redirectIfLoggedIn() {
     if (getUser()) {
-        location.replace('./other-page');
+        location.replace('./workshops');
     }
 }
 
