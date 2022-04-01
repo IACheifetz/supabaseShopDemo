@@ -24,3 +24,17 @@ Additional considerations:
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+arbitrary
+
+-   set up tables with RLS rules in supabase
+-   set up form with name input and workshop dropdown in participants html 
+-   add load eventlisteners to display shops and participants in workshops js
+-   add buttons to navigate between workshops and participants
+-   add redirection to workshop page on submitting form in participants page
+-   
+
+
+
+![wireframe for app](/assets/wireframe.png “wireframe for app”)
+
+![policies for app](/assets/policies.PNG “policies for app”)

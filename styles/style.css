@@ -7,11 +7,11 @@ body {
     --color4: hsla(187, 41%, 94%, 1);
     --color5: hsla(170, 28%, 95%, 1); */
 
-    /* --color1: hsla(45, 86%, 83%, 1);
+    --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
     --color3: hsla(315, 37%, 86%, 1);
     --color4: hsla(45, 73%, 98%, 1);
-    --color5: hsla(224, 40%, 79%, 1); */
+    --color5: hsla(224, 40%, 79%, 1);
     
     --header-height: 80px;
     --shadow: 0px 10px 20px -12px rgba(0,0,0,0.45);
@@ -19,19 +19,24 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
-    background-color: var(--color2);
+    background-repeat: repeat;
+    background-size: 100px;
+    background-color: darkgray;
 }
 
 main {
+    background-color: darkgray;
+    height: 100%;
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-bottom: calc(var(--footer-height));
 }
 
 section {
-    background-color: var(--color5);
+    background-color: darkgray;
     width: 1000px;
     max-width: 80%;
     display: flex;
@@ -48,12 +53,17 @@ section {
 header {
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    align-items: center;
+    background-color: darkgray;
     height: var(--header-height);
-    box-shadow: var(--shadow);
+}
+
+header a {
+    margin-right: 20px;
 }
 
 h2 {
+    margin: 0;
     font-size: 1.8rem;
     font-weight: bold;
 }
@@ -81,7 +91,7 @@ footer {
     height: var(--footer-height);
     display: flex;
     justify-content: flex-end;
-    background-color: var(--color3);
+    background-color: darkgray;
     box-shadow: var(--shadow);
 }
 
@@ -129,3 +139,48 @@ footer {
 .auth-container button {
     margin: 10px;
 }
+
+.families-container {
+    width: 80%;
+    min-width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.workshop {
+    width: 200px;
+    margin: 10px;
+    border: solid 1px black;
+    padding: 10px;
+}
+
+.workshop h3 {
+    margin: 0;
+}
+
+.participants {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.participant {
+    margin: 3px;
+    padding: 3px;
+    border: dotted 2px magenta;
+    cursor: pointer;
+}
+
+.participant-form {
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+.participant-form label {
+    display: block;
+}
+
+.create-main {
+    padding-top: 40px;
+}
+
