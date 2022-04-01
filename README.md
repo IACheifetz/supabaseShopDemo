@@ -36,3 +36,5 @@ arbitrary
 
 
 ![wireframe for app](/assets/wireframe.png “wireframe for app”)
+
+![policies for app](/assets/policies.png policies for app”)
